@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.toggleContainer {
+  width: 40px;
+  height: 20px;
+  padding: 3px;
+  border-radius: 0.625rem;
+  background-color: grey;
+  margin-right: 0.75rem;
+  position: relative;
+}
+
+.toggleBtn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+}

@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "inter";
+  src: url("../src/assets/fonts/inter/Inter-VariableFont_slnt\,wght.ttf");
+  font-weight: 100 1000;
+}
+
+@font-face {
+  font-family: "lora";
+  src: url("../src/assets/fonts/lora/Lora-VariableFont_wght.ttf");
+  font-weight: 100 1000;
+}
+
+@font-face {
+  font-family: "inconsolata";
+  src: url("../src/assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf");
+  font-weight: 100 1000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-background-color: #fff;
+  --primary-font-color: #2d2d2d;
+  --secondary-font-color: #a445ed;
+}
+
+.dark:root {
+  --primary-background-color: #050505;
+  --primary-font-color: #fff;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  background-color: var(--primary-background-color);
+}
+
+.App {
+  height: 100%;
+  background-color: var(--primary-background-color);
+}

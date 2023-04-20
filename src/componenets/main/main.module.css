@@ -1,0 +1,29 @@
+.main {
+  padding: 0 1.5rem;
+}
+
+.keywordContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keywordData {
+  margin-right: auto;
+}
+
+.keyword {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-font-color);
+  margin-bottom: 0.5rem;
+}
+
+.phonetic {
+  font-size: 1.125rem;
+  color: var(--secondary-font-color);
+}
+
+.playIcon {
+  scale: 0.6;
+}
