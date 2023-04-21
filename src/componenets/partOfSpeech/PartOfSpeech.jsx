@@ -7,13 +7,19 @@ export default function PartOfSpeech({ data, type }) {
     <section>
       <h2 className={styles.title}>{type}</h2>
       <p className={styles.meaning}>Meaning</p>
-      {data.meanings
-        .filter((meaning) => meaning.partOfSpeech === type)[0]
-        .definitions.map((item, i) => (
-          <p key={i} className={styles.definition}>
-            {item.definition}
-          </p>
-        ))}
+      <ul>
+        {data.meanings
+          .filter((meaning) => meaning.partOfSpeech === type)[0]
+          .definitions.map((item, i) => {
+            if (i < 3) {
+              return (
+                <li key={i} className={styles.definition}>
+                  {item.definition}
+                </li>
+              );
+            }
+          })}
+      </ul>
     </section>
   );
 }

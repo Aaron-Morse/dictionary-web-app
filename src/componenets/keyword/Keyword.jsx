@@ -14,6 +14,7 @@ export default function Keyword({ data }) {
     return audioLink || mp3s[0].audio;
   }
 
+  console.log(getAudioLink());
   const audioRef = useRef();
 
   return (
