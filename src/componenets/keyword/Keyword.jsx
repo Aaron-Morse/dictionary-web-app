@@ -22,17 +22,13 @@ export default function Keyword({ data }) {
         <h1 className={styles.keyword}>{data?.word}</h1>
         <p className={styles.phonetic}>{data?.phonetic}</p>
       </div>
-      {data && (
-        <>
-          <audio ref={audioRef} src={getAudioLink()}></audio>
-          <img
-            onClick={() => audioRef.current.play()}
-            className={styles.playIcon}
-            src={playIcon}
-            alt="Play keyword button"
-          />
-        </>
-      )}
+      <audio ref={audioRef} src={getAudioLink()}></audio>
+      <img
+        onClick={() => audioRef.current.play()}
+        className={styles.playIcon}
+        src={playIcon}
+        alt="Play keyword button"
+      />
     </section>
   );
 }

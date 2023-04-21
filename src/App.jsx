@@ -8,7 +8,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [font, setFont] = useState("inter");
   const [data, setData] = useState(null);
-  console.log(data);
+
   return (
     <div className="App" style={{ fontFamily: font }}>
       <Header

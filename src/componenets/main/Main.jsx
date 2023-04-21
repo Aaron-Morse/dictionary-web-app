@@ -1,13 +1,16 @@
 import styles from "./main.module.css";
 import Keyword from "../keyword/Keyword";
-import Noun from "../noun/Noun";
+import PartOfSpeech from "../partOfSpeech/PartOfSpeech";
 
 export default function Main({ data }) {
-  console.log(data);
   return (
     <main className={styles.container}>
-      <Keyword data={data} />
-      <Noun data={data} />
+      {data && (
+        <>
+          <Keyword data={data} />
+          <PartOfSpeech data={data} type={"noun"} />
+        </>
+      )}
     </main>
   );
 }
