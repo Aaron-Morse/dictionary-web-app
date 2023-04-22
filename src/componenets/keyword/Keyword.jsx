@@ -3,8 +3,9 @@ import styles from "./keyword.module.css";
 import playIcon from "../../assets/images/icon-play.svg";
 
 export default function Keyword({ data }) {
-  function getAudioLink() {
-    const mp3s = data.phonetics.filter((item) => item.audio);
+  const mp3s = data.phonetics.filter((item) => item.audio);
+
+  const getAudioLink = () => {
     let audioLink = "";
 
     for (let mp3 of mp3s) {
@@ -12,9 +13,8 @@ export default function Keyword({ data }) {
     }
 
     return audioLink || mp3s[0].audio;
-  }
+  };
 
-  console.log(getAudioLink());
   const audioRef = useRef();
 
   return (
@@ -23,13 +23,17 @@ export default function Keyword({ data }) {
         <h1 className={styles.keyword}>{data?.word}</h1>
         <p className={styles.phonetic}>{data?.phonetic}</p>
       </div>
-      <audio ref={audioRef} src={getAudioLink()}></audio>
-      <img
-        onClick={() => audioRef.current.play()}
-        className={styles.playIcon}
-        src={playIcon}
-        alt="Play keyword button"
-      />
+      {mp3s.length > 0 && (
+        <>
+          <audio ref={audioRef} src={getAudioLink()}></audio>
+          <img
+            onClick={() => audioRef.current.play()}
+            className={styles.playIcon}
+            src={playIcon}
+            alt="Play keyword button"
+          />
+        </>
+      )}
     </section>
   );
 }

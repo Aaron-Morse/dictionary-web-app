@@ -1,0 +1,10 @@
+.container {
+  color: #757575;
+  margin-bottom: 1.938rem;
+}
+
+.synonym {
+  margin-left: 1.5rem;
+  color: var(--secondary-font-color);
+  font-weight: 700;
+}
