@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 2.188rem;
+  color: var(--primary-font-color);
 }
 
 .title::after {

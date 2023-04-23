@@ -11,7 +11,10 @@ function App() {
   const [data, setData] = useState(null);
 
   return (
-    <div className="App" style={{ fontFamily: font }}>
+    <div
+      className={darkMode ? "App dark" : "App light"}
+      style={{ fontFamily: font }}
+    >
       <Header
         font={font}
         setFont={setFont}

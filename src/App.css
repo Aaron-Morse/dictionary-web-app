@@ -22,15 +22,22 @@
   box-sizing: border-box;
 }
 
-:root {
+.light {
   --primary-background-color: #fff;
   --primary-font-color: #2d2d2d;
   --secondary-font-color: #a445ed;
+  --toggle-background: #757575;
+  --form-background: #f4f4f4;
+  --opacity: 25%;
 }
 
-.dark:root {
+.dark {
   --primary-background-color: #050505;
   --primary-font-color: #fff;
+  --secondary-font-color: #a445ed;
+  --toggle-background: #a445ed;
+  --form-background: #1f1f1f;
+  --opacity: 1;
 }
 
 html,
@@ -47,4 +54,5 @@ body {
 .App {
   height: 100%;
   background-color: var(--primary-background-color);
+  transition: ease all 0.5s;
 }

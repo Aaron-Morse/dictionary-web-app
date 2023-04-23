@@ -8,7 +8,7 @@
   height: 20px;
   padding: 3px;
   border-radius: 0.625rem;
-  background-color: grey;
+  background-color: var(--toggle-background);
   margin-right: 0.75rem;
   position: relative;
 }
@@ -19,4 +19,8 @@
   border-radius: 50%;
   background-color: white;
   position: absolute;
+}
+
+svg path {
+  stroke: var(--toggle-background);
 }
