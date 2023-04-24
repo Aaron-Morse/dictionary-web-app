@@ -19,7 +19,11 @@ export default function Search({ setData }) {
   }
 
   return (
-    <form onSubmit={fetchData} className={styles.form}>
+    <form
+      onSubmit={fetchData}
+      onFocus={(e) => e.target.select()}
+      className={styles.form}
+    >
       <input
         type="text"
         placeholder="Search for any word..."
