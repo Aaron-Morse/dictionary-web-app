@@ -1,7 +1,6 @@
 import styles from "./main.module.css";
 import Keyword from "../keyword/Keyword";
 import PartOfSpeech from "../partOfSpeech/PartOfSpeech";
-import Synonym from "../synonym/Synonym";
 
 export default function Main({ data }) {
   return (
@@ -9,9 +8,7 @@ export default function Main({ data }) {
       {data && (
         <>
           <Keyword data={data} />
-          <PartOfSpeech data={data} type={"noun"} />
-          <Synonym data={data} />
-          <PartOfSpeech data={data} type={"verb"} />
+          <PartOfSpeech data={data} />
         </>
       )}
     </main>

@@ -1,16 +1,13 @@
 import styles from "./synonym.module.css";
 
-export default function Synonym({ data }) {
-  const synonyms = data.meanings[0].synonyms[0];
+export default function Synonym({ meaning }) {
+  const [synonyms] = meaning.synonyms;
 
   return (
     <>
       {synonyms && (
         <p className={styles.container}>
-          Synonyms{" "}
-          <span className={styles.synonym}>
-            {data.meanings[0].synonyms[0]}
-          </span>
+          Synonyms <span className={styles.synonym}>{synonyms}</span>
         </p>
       )}
     </>

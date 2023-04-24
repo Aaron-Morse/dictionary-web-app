@@ -1,27 +1,38 @@
 import styles from "./partofspeech.module.css";
+import Synonym from "../synonym/Synonym";
 
-export default function PartOfSpeech({ data, type }) {
+export default function PartOfSpeech({ data }) {
   console.log(data);
 
-  const length = type === "noun" ? 3 : 1;
+  function generatePartOfSpeech() {
+    const { meanings } = data;
 
-  return (
-    <section className={styles.container}>
-      <h2 className={styles.title}>{type}</h2>
-      <p className={styles.meaning}>Meaning</p>
-      <ul>
-        {data.meanings
-          .filter((meaning) => meaning.partOfSpeech === type)[0]
-          ?.definitions.map((item, i) => {
-            if (i < length) {
+    return meanings.map((meaning, i) => (
+      <section className={styles.container} key={i}>
+        <h2 className={styles.title}>{meaning.partOfSpeech}</h2>
+        <p className={styles.meaning}>Meaning</p>
+        <ul>
+          {meaning.definitions.map((def, i) => {
+            if (i < 3) {
               return (
                 <li key={i} className={styles.definition}>
-                  {item.definition}
+                  {def.definition}
                 </li>
               );
             }
           })}
-      </ul>
-    </section>
-  );
+        </ul>
+        {meaning.partOfSpeech === "noun" && (
+          <Synonym meaning={meaning} />
+        )}
+        {meaning.partOfSpeech === "verb" && (
+          <p className={styles.sentence}>
+            <q>{meaning.definitions[0].example}</q>
+          </p>
+        )}
+      </section>
+    ));
+  }
+
+  return <>{generatePartOfSpeech()}</>;
 }
