@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../src/componenets/header/Header";
 import Search from "../src/componenets/search/Search";
 import Main from "../src/componenets/main/Main";
@@ -10,11 +10,12 @@ function App() {
   const [font, setFont] = useState("inter");
   const [data, setData] = useState(null);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark");
+  }, [darkMode]);
+
   return (
-    <div
-      className={darkMode ? "App dark" : "App light"}
-      style={{ fontFamily: font }}
-    >
+    <div className="App" style={{ fontFamily: font }}>
       <Header
         font={font}
         setFont={setFont}
