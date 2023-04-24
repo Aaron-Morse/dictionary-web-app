@@ -33,3 +33,13 @@
   background-color: inherit;
   padding-right: 1.5rem;
 }
+
+.error {
+  border: 1px solid #ff5252;
+}
+
+.errorMsg {
+  color: #ff5252;
+  margin-top: -1.5rem;
+  margin-left: 1.5rem;
+}
