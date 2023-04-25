@@ -21,6 +21,7 @@ export default function Search({ setData }) {
       const [data] = json;
       setData(data);
     } catch (err) {
+      setData(undefined);
       console.log("error", err);
     }
   }
