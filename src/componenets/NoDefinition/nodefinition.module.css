@@ -1,0 +1,22 @@
+.container {
+  margin-top: 6.5rem;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.emoji {
+  margin-bottom: 2.75rem;
+  scale: 2.5;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-font-color);
+}
+
+.content {
+  font-size: 1.125rem;
+  color: #757575;
+}

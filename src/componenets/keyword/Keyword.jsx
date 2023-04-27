@@ -3,27 +3,21 @@ import styles from "./keyword.module.css";
 import playIcon from "../../assets/images/icon-play.svg";
 
 export default function Keyword({ data }) {
-  const mp3s = data.phonetics.filter((item) => item.audio);
+  const audioRef = useRef();
+  const phonetics = data.phonetics;
 
   const getAudioLink = () => {
-    let audioLink = "";
-
-    for (let mp3 of mp3s) {
-      if (mp3.audio.includes("us.mp3")) audioLink = mp3.audio;
-    }
-
-    return audioLink || mp3s[0].audio;
+    const links = phonetics.filter((item) => item.audio);
+    return links[links.length - 1].audio;
   };
-
-  const audioRef = useRef();
 
   return (
     <section className={styles.keywordContainer}>
       <div className={styles.keywordData}>
         <h1 className={styles.keyword}>{data?.word}</h1>
-        <p className={styles.phonetic}>{data?.phonetic}</p>
+        <p className={styles.phonetic}>{phonetics[0].text}</p>
       </div>
-      {mp3s.length > 0 && (
+      {getAudioLink() !== "" && (
         <>
           <audio ref={audioRef} src={getAudioLink()}></audio>
           <svg

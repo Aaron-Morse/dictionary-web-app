@@ -4,12 +4,13 @@ import searchIcon from "../../assets/images/icon-search.svg";
 
 export default function Search({ setData }) {
   const [query, setQuery] = useState("");
-  const [error, setError] = useState(false);
+  const [searchIsBlank, setSearchIsBlank] = useState(false);
 
   async function fetchData(e) {
     e.preventDefault();
+
     if (!query) {
-      setError(true);
+      setSearchIsBlank(true);
       return;
     }
 
@@ -30,9 +31,10 @@ export default function Search({ setData }) {
     <>
       <form
         onSubmit={fetchData}
-        onFocus={(e) => e.target.select()}
         className={
-          error ? `${styles.form} ${styles.error}` : `${styles.form}`
+          searchIsBlank
+            ? `${styles.form} ${styles.error}`
+            : `${styles.form}`
         }
       >
         <input
@@ -41,7 +43,7 @@ export default function Search({ setData }) {
           className={styles.searchInput}
           value={query}
           onChange={(e) => {
-            setError(false);
+            setSearchIsBlank(false);
             setQuery(e.target.value);
           }}
         />
@@ -49,7 +51,7 @@ export default function Search({ setData }) {
           <img src={searchIcon} />
         </button>
       </form>
-      {error && (
+      {searchIsBlank && (
         <p className={styles.errorMsg}>Whoops, can't be empty...</p>
       )}
     </>

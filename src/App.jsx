@@ -3,12 +3,15 @@ import Header from "../src/componenets/header/Header";
 import Search from "../src/componenets/search/Search";
 import Main from "../src/componenets/main/Main";
 import Footer from "../src/componenets/footer/Footer";
+import NoDefinition from "../src/componenets/NoDefinition/NoDefinition";
 import "./App.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [font, setFont] = useState("inter");
   const [data, setData] = useState(null);
+
+  console.log(data);
 
   useEffect(() => {
     if (darkMode) {
@@ -27,8 +30,14 @@ function App() {
         setDarkMode={setDarkMode}
       />
       <Search setData={setData} />
-      <Main data={data} />
-      <Footer data={data} />
+      {data !== undefined ? (
+        <>
+          <Main data={data} />
+          <Footer data={data} />
+        </>
+      ) : (
+        <NoDefinition />
+      )}
     </div>
   );
 }
