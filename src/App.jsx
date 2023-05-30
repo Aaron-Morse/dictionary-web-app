@@ -3,7 +3,7 @@ import Header from "../src/componenets/header/Header";
 import Search from "../src/componenets/search/Search";
 import Main from "../src/componenets/main/Main";
 import Footer from "../src/componenets/footer/Footer";
-import NoDefinition from "../src/componenets/NoDefinition/NoDefinition";
+import NoDefinition from "../src/componenets/noDefinition/NoDefinition";
 import "./App.css";
 
 function App() {

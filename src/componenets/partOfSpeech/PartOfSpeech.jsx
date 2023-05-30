@@ -3,11 +3,19 @@ import Synonym from "../synonym/Synonym";
 import Sentence from "../sentence/Sentence";
 
 export default function PartOfSpeech({ data }) {
-  const { meanings } = data;
+  let { meanings } = data;
+  const obj = {};
+  for (let i = 0; i < meanings.length; i++) {
+    const meaning = meanings[i];
+    if (!(meaning.partOfSpeech in obj)) {
+      obj[meaning.partOfSpeech] = meaning;
+    }
+  }
+  const distinctValues = Object.values(obj);
 
   return (
     <>
-      {meanings.map((meaning, i) => (
+      {distinctValues.map((meaning, i) => (
         <section className={styles.container} key={i}>
           <h2 className={styles.title}>{meaning.partOfSpeech}</h2>
           <p className={styles.meaning}>Meaning</p>

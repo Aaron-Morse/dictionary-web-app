@@ -7,15 +7,13 @@ export default function ThemeSelector({ darkMode, setDarkMode }) {
 
   return (
     <div className={styles.container}>
-      <div
-        className={styles.toggleContainer}
-        onClick={toggleDarkMode}
-      >
-        <div
-          className={styles.toggleBtn}
-          style={darkMode ? { right: "8%" } : { left: "8%" }}
-        ></div>
-      </div>
+      <label className={styles.toggle}>
+        <input type="checkbox" className={styles.checkbox} />
+        <span
+          className={styles.slider}
+          onClick={toggleDarkMode}
+        ></span>
+      </label>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="22"
