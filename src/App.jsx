@@ -11,8 +11,6 @@ function App() {
   const [font, setFont] = useState("inter");
   const [data, setData] = useState(null);
 
-  console.log(data);
-
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");

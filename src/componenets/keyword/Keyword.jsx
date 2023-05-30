@@ -3,6 +3,7 @@ import styles from "./keyword.module.css";
 import playIcon from "../../assets/images/icon-play.svg";
 
 export default function Keyword({ data }) {
+  console.log(data);
   const audioRef = useRef();
   const phonetics = data.phonetics;
 
@@ -15,7 +16,9 @@ export default function Keyword({ data }) {
     <section className={styles.keywordContainer}>
       <div className={styles.keywordData}>
         <h1 className={styles.keyword}>{data?.word}</h1>
-        <p className={styles.phonetic}>{phonetics[0]?.text}</p>
+        <p className={styles.phonetic}>
+          {phonetics?.text || phonetics[phonetics.length - 1].text}
+        </p>
       </div>
       {getAudioLink() !== undefined && (
         <>
