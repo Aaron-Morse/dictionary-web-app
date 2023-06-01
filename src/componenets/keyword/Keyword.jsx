@@ -17,7 +17,7 @@ export default function Keyword({ data }) {
       <div className={styles.keywordData}>
         <h1 className={styles.keyword}>{data?.word}</h1>
         <p className={styles.phonetic}>
-          {phonetics?.text || phonetics[phonetics.length - 1].text}
+          {phonetics.text || phonetics[phonetics.length - 1].text}
         </p>
       </div>
       {getAudioLink() !== undefined && (

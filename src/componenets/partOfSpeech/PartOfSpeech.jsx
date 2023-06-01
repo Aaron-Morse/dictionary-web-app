@@ -3,10 +3,9 @@ import Synonym from "../synonym/Synonym";
 import Sentence from "../sentence/Sentence";
 
 export default function PartOfSpeech({ data }) {
-  let { meanings } = data;
+  const { meanings } = data;
   const obj = {};
-  for (let i = 0; i < meanings.length; i++) {
-    const meaning = meanings[i];
+  for (const meaning of meanings) {
     if (!(meaning.partOfSpeech in obj)) {
       obj[meaning.partOfSpeech] = meaning;
     }
@@ -30,7 +29,7 @@ export default function PartOfSpeech({ data }) {
               }
             })}
           </ul>
-          {meaning.partOfSpeech === "noun" && (
+          {meaning.synonyms.length > 0 && (
             <Synonym meaning={meaning} />
           )}
           {meaning.partOfSpeech === "verb" && (
