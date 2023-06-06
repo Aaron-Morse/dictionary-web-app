@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Header from "../src/componenets/header/Header";
-import Search from "../src/componenets/search/Search";
-import Main from "../src/componenets/main/Main";
-import Footer from "../src/componenets/footer/Footer";
-import NoDefinition from "../src/componenets/noDefinition/NoDefinition";
+import Header from "./components/header/Header";
+import Search from "./components/search/Search";
+import Main from "./components/main/Main";
+import Footer from "./components/footer/Footer";
+import NoDefinition from "./components/noDefinition/NoDefinition";
 import "./App.css";
 
 function App() {
